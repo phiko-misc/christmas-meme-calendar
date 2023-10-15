@@ -1,40 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌟 Christmas Meme Calendar - Next.js Project with Dark Mode 🎄
 
-## Getting Started
+Ho, Ho, Ho! Welcome to the Christmas Meme Calendar, a delightful Next.js project that spreads joy and laughter during the holiday season, now with the added magic of Dark Mode. This project delivers daily memes to programmers and developers, making each day of December leading up to Christmas a bit more cheerful and amusing. Get ready to unwrap a new meme every day, with extra treats on the weekends, all while embracing the holiday spirit!
 
-First, run the development server:
+![Christmas Meme Calendar](https://your-image-url-here.com/christmas-calendar-screenshot.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+- 📅 **Daily Memes**: Enjoy a fresh meme every day of December leading up to Christmas.
+- 🌟 **Weekend Bonanza**: Double the fun with 2 memes every weekend.
+- 🌒 **Dark Mode**: Toggle between light and dark mode to suit your preference.
+- 🎉 **Randomization**: Memes are handpicked from our vast collection, ensuring a surprise every time you visit.
+- 🖼️ **Interactive Interface**: A user-friendly and visually appealing Next.js application.
+- 🎁 **Share the Joy**: Easily share your favorite memes with your colleagues and friends.
+- 📱 **Responsive Design**: Works seamlessly on desktops, tablets, and mobile devices.
+- 🕒 **Countdown**: Track the days until Christmas with our handy countdown timer.
+
+## 🛠️ Technologies Used
+
+- **Next.js**: A powerful React framework for building fast and efficient web applications.
+- **Node.js**: For server-side scripting and handling API requests.
+- **CSS Modules**: Scoped and modular CSS to keep styles organized.
+- **Random Meme API**: We source memes from the internet's funniest corners.
+- **Responsive Design**: Ensuring an excellent user experience across all devices.
+- **Dark Mode Toggle**: Enhancing the user experience with Dark Mode support.
+- **Git**: Version control for collaboration and code management.
+
+## 🏃‍♂️ Quick Start
+
+1. **Clone the Repository**
+```shell
+git clone https://github.com/your-username/christmas-meme-calendar.git
+cd christmas-meme-calendar
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install Dependencies**
+```shell
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+3. **Start the Development Server**
+```shell
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+4. **Open Your Browser**
+Visit `http://localhost:3000` to see the Christmas Meme Calendar in action.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 🎁 Contribute
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+We welcome contributions! Whether it's adding new memes, improving the user interface, or fixing bugs, your help is greatly appreciated. Check out our [contribution guidelines](CONTRIBUTING.md) to get started.
 
-## Learn More
+## 📃 License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the [APACHE LICENSE, VERSION 2.0](LICENSE) except all the pictures.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🙏 Acknowledgments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+A big thanks to all the meme creators and open-source community for making this project possible. Let's spread some holiday cheer together!
 
-## Deploy on Vercel
+## 📮 Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you have any questions, suggestions, or just want to say hi, feel free to reach out to me at [philip.guldborg@miscgang.xyz](mailto:philip.guldborg@miscgang.xyz).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🌟 Spread the Joy
+
+Share the Christmas Meme Calendar with your fellow programmers and developers and brighten up their holiday season! 🎉
+
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)](https://twitter.com/intent/tweet?text=Check%20out%20the%20Christmas%20Meme%20Calendar%20%F0%9F%8E%84%20-%20A%20Next.js%20project%20that%20delivers%20daily%20memes%20for%20programmers%20and%20developers%20during%20the%20holiday%20season!%20%F0%9F%8E%85%20https%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)
+
+Enjoy the laughter and Merry Christmas! 🎄🎁🌙
