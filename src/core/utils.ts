@@ -1,3 +1,5 @@
+import { readFile } from "fs";
+import path from "path";
 
 /**
  * Shuffle arrays
@@ -27,3 +29,17 @@ export function shuffle<T>(array: T[]): T[] {
 
     return array;
 };
+
+
+/**
+ * Get a random number
+ *
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ */
+export function getRandomInt(min: number, max: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+}
