@@ -5,7 +5,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ['latin'] })
 
 export default function calender() {
-    const toDay = dayjs("2023-12-10");
+    const toDay = dayjs();
     const days = [1, 19, 18, 5, 23, 7, 3, 15, 22, 9, 2, 4, 14, 11, 21, 13, 8, 12, 20, 17, 16, 10, 6, 24];
     return (
         <main className={`flex min-h-screen h-full flex-col items-center ${inter.className}`}>

@@ -2,7 +2,7 @@ import { getRandomInt } from '@utils';
 import dayjs from 'dayjs'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import duration from "dayjs/plugin/duration";
-import { readFile, readFileSync } from 'fs';
+import { readFileSync } from 'fs';
 import path from 'path';
 
 dayjs.extend(duration);
@@ -15,7 +15,7 @@ export const config = {
     responseLimit: '8mb',
   },
   // Specifies the maximum allowed duration for this function to execute (in seconds)
-  maxDuration: 100,
+  maxDuration: 5,
 }
 
 
