@@ -21,7 +21,7 @@ interface time {
 export default function Countdown(): JSX.Element {
     const toDay = dayjs();
     const christmasDate = dayjs(`${dayjs().get('year')}-12-24`);
-    const [timeBeforeChristmas, setTimeBeforeChristmas] = useState<time>()
+    const [timeBeforeChristmas, setTimeBeforeChristmas] = useState<time>();
 
     useEffect(() => {
         const updateTime = setInterval(() => {
@@ -45,12 +45,12 @@ export default function Countdown(): JSX.Element {
                 })
             }
 
-        }, 1000)
+        }, 1000);
 
         return () => {
             clearInterval(updateTime);
-        }
-    })
+        };
+    });
 
     if (timeBeforeChristmas) {
         timeBeforeChristmas.days = zeroInFrontOfNumber(timeBeforeChristmas.days);
@@ -84,32 +84,7 @@ export default function Countdown(): JSX.Element {
     }
 
     return (
-        // <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
-        //     <div className="flex flex-col p-2 bg-white rounded-2xl">
-        //         <span className="font-mono text-5xl">
-        //             <span>{timeBeforeChristmas?.days}</span>
-        //         </span>
-        //         days
-        //     </div>
-        //     <div className="flex flex-col p-2 bg-white rounded-2xl">
-        //         <span className="countdown font-mono text-5xl">
-        //             <span>{timeBeforeChristmas?.hours}</span>
-        //         </span>
-        //         hours
-        //     </div>
-        //     <div className="flex flex-col p-2 bg-white rounded-2xl">
-        //         <span className="font-mono text-5xl">
-        //             <span>{timeBeforeChristmas?.minutes}</span>
-        //         </span>
-        //         min
-        //     </div>
-        //     <div className="flex flex-col p-2 bg-white rounded-2xl">
-        //         <span className="font-mono text-5xl">
-        //             <span>{timeBeforeChristmas?.seconds}</span>
-        //         </span>
-        //         sec
-        //     </div>
-        // </div>
+
         <div className="grid grid-cols-2 gap-4 py-6 px-10 md:flex md:items-center md:justify-between md:mt-2 rounded-xl md:px-6 md:py-8">
             <NumberBox num={timeBeforeChristmas?.days ?? 0} unit="Days" />
             <span className=" hidden text-5xl -mt-8 md:inline-block md:text-7xl font-normal text-gray-50">:</span>

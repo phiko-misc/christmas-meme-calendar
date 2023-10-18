@@ -3,7 +3,6 @@ import dayjs from 'dayjs'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import duration from "dayjs/plugin/duration";
 import { readFileSync } from 'fs';
-import path from 'path';
 
 dayjs.extend(duration);
 
@@ -12,7 +11,7 @@ export const config = {
     bodyParser: {
       sizeLimit: '10kb',
     },
-    responseLimit: '8mb',
+    responseLimit: '700kb',
   },
   // Specifies the maximum allowed duration for this function to execute (in seconds)
   maxDuration: 5,
@@ -26,7 +25,7 @@ export const config = {
  * @returns {boolean}
  */
 async function handleDayCheck(day: number): Promise<boolean> {
-  if (dayjs().month(11).date() >= day && dayjs().month() === 9) {
+  if (dayjs().month(11).date() >= day && dayjs().month() === 11) {
     return true;
   }
   return false;
@@ -66,20 +65,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const random1 = getRandomInt(1, await dayOfTheWeekCheck(+id) === "day" ? 4 : 8);
     if (random1 > 4) {
       const weekOfTheMonth = dayjs.duration("weeks").weeks();
-      const random = getRandomInt(1, 2)
+      const random = getRandomInt(1, 2);
       const imgPath = `./src/images/weekends/${weekOfTheMonth + 1}/${random}/dev/${random1 - 4}.jpg`;
       const imageBuffer = readFileSync(imgPath);
-      const extensionName = path.extname(imgPath);
       const base64Image = Buffer.from(imageBuffer).toString('base64');
-      return res.status(200).json({ image: `data:image/${extensionName.split('.').pop()};base64,${base64Image}` });
+      return res.status(200).json({ image: base64Image });
 
 
     }
     const imgPath = `./src/images/${+id}/dev/${random1}.jpg`;
     const imageBuffer = readFileSync(imgPath);
     const base64Image = Buffer.from(imageBuffer).toString('base64');
-    const extensionName = path.extname(imgPath);
-    return res.status(200).json({ image: `data:image/${extensionName.split('.').pop()};base64,${base64Image}` });
+    return res.status(200).json({ image: base64Image });
   } else {
     return res.status(500).json({ error: "Unexpected error" });
   }

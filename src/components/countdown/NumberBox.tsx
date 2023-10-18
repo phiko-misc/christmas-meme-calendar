@@ -36,6 +36,6 @@ export default function NumberBox(props: Props) {
                 {props.unit}
             </p>
         </div>
-    )
+    );
 }
 

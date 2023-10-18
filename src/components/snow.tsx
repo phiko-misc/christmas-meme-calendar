@@ -1,8 +1,6 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import Snowfall from "react-snowfall";
 
-
-
 /**
  * Used for workaround the useLayoutEffect error
  */
@@ -31,5 +29,5 @@ export default function Snow(): JSX.Element {
                 return <></>
         }
 
-        return <Child />;
+        return <Child />
 }
