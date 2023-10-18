@@ -11,7 +11,7 @@ export const config = {
     bodyParser: {
       sizeLimit: '10kb',
     },
-    responseLimit: '700kb',
+    responseLimit: 716800,
   },
   // Specifies the maximum allowed duration for this function to execute (in seconds)
   maxDuration: 5,
@@ -25,7 +25,7 @@ export const config = {
  * @returns {boolean}
  */
 async function handleDayCheck(day: number): Promise<boolean> {
-  if (dayjs().month(11).date() >= day && dayjs().month() === 11) {
+  if (dayjs().month(9).date() >= day && dayjs().month() === 9) {
     return true;
   }
   return false;
@@ -46,6 +46,12 @@ async function dayOfTheWeekCheck(day: number): Promise<"weekend" | "day"> {
   return "day";
 }
 
+async function weekOfTheMonth(day: string): Promise<string> {
+  const firstWeek = dayjs(day).week();
+  const lastWeek = dayjs(`${dayjs().year()}-12-24`).week();
+  return((lastWeek - firstWeek).toString());
+}
+
 /**
  * Handle the api call
  *
@@ -64,9 +70,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method === 'GET' && await handleDayCheck(+id)) {
     const random1 = getRandomInt(1, await dayOfTheWeekCheck(+id) === "day" ? 4 : 8);
     if (random1 > 4) {
-      const weekOfTheMonth = dayjs.duration("weeks").weeks();
+      const weekOfTheMonth1 = await weekOfTheMonth(dayjs().month(11).date(+id).format("YYYY-MM-DD"));
       const random = getRandomInt(1, 2);
-      const imgPath = `./src/images/weekends/${weekOfTheMonth + 1}/${random}/dev/${random1 - 4}.jpg`;
+      const imgPath = `./src/images/weekends/${weekOfTheMonth1}/${random}/dev/${random1 - 4}.jpg`;
       const imageBuffer = readFileSync(imgPath);
       const base64Image = Buffer.from(imageBuffer).toString('base64');
       return res.status(200).json({ image: base64Image });

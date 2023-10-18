@@ -4,6 +4,7 @@ import { GetStaticProps } from "next";
 import { Inter } from "next/font/google"
 import Link from "next/link";
 import getConfig from "next/config";
+import SimpleButton from "@components/button/SimpleButton";
 
 const inter = Inter({ subsets: ['latin'] });
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
@@ -14,11 +15,8 @@ export default function memePage(props: { image: string, error: boolean }) {
     return (
         <main className={`flex min-h-screen h-full flex-col items-center ${inter.className}`}>
             <div className="flex justify-center w-full h-full place-items-center">
-                <button className={`invisible absolute lg:static lg:visible lg:h-44 lg:w-44 bg-gradient-to-r from-rose-700 to-rose-900 rounded-full shadow-lg`}>
-                    <Link href="calender" className='w-full flex place-content-center'>
-                        <ChevronLeftIcon className='mr-4 h-16 w-16 lg:w-28 lg:h-28 text-right' />
-                    </Link>
-                </button>
+                <SimpleButton className="invisible absolute lg:static lg:visible"
+                    icon={<ChevronLeftIcon className='mr-4 h-16 w-16 lg:w-28 lg:h-28 text-right' />} />
                 <center className="flex flex-col h-full place-content-center p-3">
                     {
                         props.error
@@ -28,9 +26,12 @@ export default function memePage(props: { image: string, error: boolean }) {
                                 <h1>ready for this</h1>
                             </div>
                             :
-                            <img className="border-2 w-full h-full md:w-fit md:h-fit object-center m-2 max-h-full" src={`data:image/jpg;base64,${props.image}`} alt="dev meme" />
+                            <img className="border-2 border-black dark:border-white md:w-fit md:h-fit object-center m-2" src={`data:image/jpg;base64,${props.image}`} alt="dev meme" />
                     }
+                    <SimpleButton className="visible static lg:absolute lg:invisible"
+                    icon={<ChevronLeftIcon className='mr-4 h-16 w-16 lg:w-28 lg:h-28 text-right' />} />
                 </center>
+                
             </div>
         </main>
     )

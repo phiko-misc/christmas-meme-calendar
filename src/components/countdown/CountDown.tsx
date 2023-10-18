@@ -87,11 +87,11 @@ export default function Countdown(): JSX.Element {
 
         <div className="grid grid-cols-2 gap-4 py-6 px-10 md:flex md:items-center md:justify-between md:mt-2 rounded-xl md:px-6 md:py-8">
             <NumberBox num={timeBeforeChristmas?.days ?? 0} unit="Days" />
-            <span className=" hidden text-5xl -mt-8 md:inline-block md:text-7xl font-normal text-gray-50">:</span>
+            <span className=" hidden text-5xl -mt-8 md:inline-block md:text-7xl font-normal text-gray-600 dark:text-gray-50">:</span>
             <NumberBox num={timeBeforeChristmas?.hours ?? 0} unit="Hours" />
-            <span className="hidden text-5xl -mt-8 md:inline-block md:text-7xl font-normal text-gray-50">:</span>
+            <span className="hidden text-5xl -mt-8 md:inline-block md:text-7xl font-normal text-gray-600 dark:text-gray-50">:</span>
             <NumberBox num={timeBeforeChristmas?.minutes ?? 0} unit="Minutes" />
-            <span className="hidden text-5xl -mt-8 md:inline-block md:text-7xl font-normal text-gray-50">:</span>
+            <span className="hidden text-5xl -mt-8 md:inline-block md:text-7xl font-normal text-gray-600 dark:text-gray-50">:</span>
             <NumberBox num={timeBeforeChristmas?.seconds ?? 0} unit="Seconds" />
         </div>
 

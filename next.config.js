@@ -9,7 +9,7 @@ const nextConfig = {
     URL: process.env.CLIENT_API_URL ?? "http://localhost:3000/api/",
   },
   experimental: {
-    largePageDataBytes: "700kb"
+    largePageDataBytes: 716800
   }
 }
 
