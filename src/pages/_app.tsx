@@ -15,16 +15,18 @@ export default function App({ Component, pageProps }: AppProps) {
   dayjs.extend(weekOfYear)
 
   return (
+
     <main id="root-container" className='h-screen w-screen'>
+
       <Head>
         <title>Meme Christmas Calendar</title>
         <meta name="description" content="Make the christmas time more fun with the best memes in the best time" />
       </Head>
-      <Layout>
-        <ThemeProvider>
+      <ThemeProvider attribute="class" defaultTheme='light'>
+        <Layout>
           <Component {...pageProps} />
-        </ThemeProvider>
-      </Layout>
-    </main>
+        </Layout>
+      </ThemeProvider>
+    </main >
   );
 }

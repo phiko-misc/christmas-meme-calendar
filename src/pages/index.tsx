@@ -11,7 +11,7 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
       <div>
-        <h1 className=' text-5xl text-center font-semibold flex place-content-center'>
+        <h1 className=' text-5xl text-center font-semibold flex place-content-center text-black dark:text-white'>
           <div className='invisible md:visible'>🎅</div>
           Time Before Christmas
           <div className='invisible md:visible'>🎅</div>
