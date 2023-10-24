@@ -3,7 +3,7 @@
  * @template T
  * @param {T[]} array Can take any type you want of arrays
  * @returns {T[]} a shuffled
- * 
+ *
  * ```js
  * // Can be used like this
  * const sortArray = [1, 2, 3, 4, 5, 6];
@@ -11,19 +11,21 @@
  * ```
  */
 export function shuffle<T>(array: T[]): T[] {
-    let currentIndex = array.length, randomIndex;
+  let currentIndex = array.length,
+    randomIndex;
 
-    while (currentIndex != 0) {
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
 
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
 
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-};
-
+  return array;
+}
 
 /**
  * Get a random number
@@ -33,7 +35,7 @@ export function shuffle<T>(array: T[]): T[] {
  * @returns {number}
  */
 export function getRandomInt(min: number, max: number) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min);
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
 }
