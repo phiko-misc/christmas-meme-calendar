@@ -1,0 +1,20 @@
+# Ignore artifacts:
+build
+coverage
+**/.git
+**/.vs
+**/public
+**/.next
+**/node_modules
+**/next.config.js
+**/next-env.d.ts
+**/.gitignore
+**/.eslintrc.json
+**/postcss.config.js
+**/tailwind.config.ts
+**/tsconfig.json
+**/src/styles/globals.css
+**/.prettierrc
+**/*.md
+**/package-lock.json
+**/package.json
