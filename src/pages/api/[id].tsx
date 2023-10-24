@@ -49,7 +49,7 @@ async function dayOfTheWeekCheck(day: number): Promise<"weekend" | "day"> {
 async function weekOfTheMonth(day: string): Promise<string> {
   const firstWeek = dayjs(day).week();
   const lastWeek = dayjs(`${dayjs().year()}-12-24`).week();
-  return((lastWeek - firstWeek).toString());
+  return (lastWeek - firstWeek === 0 ? "5" : (lastWeek - firstWeek).toString());
 }
 
 /**

@@ -15,23 +15,23 @@ export default function memePage(props: { image: string, error: boolean }) {
     return (
         <main className={`flex min-h-screen h-full flex-col items-center ${inter.className}`}>
             <div className="flex justify-center w-full h-full place-items-center">
-                <SimpleButton className="invisible absolute lg:static lg:visible"
+                <SimpleButton link="calender" className="invisible absolute lg:static lg:visible"
                     icon={<ChevronLeftIcon className='mr-4 h-16 w-16 lg:w-28 lg:h-28 text-right' />} />
-                <center className="flex flex-col h-full place-content-center p-3">
+                <center className="flex flex-col h-full justify-center p-3">
                     {
                         props.error
                             ?
-                            <div className="text-7xl">
+                            <div className="text-7xl text-black dark:text-white">
                                 <h1>You are not</h1>
                                 <h1>ready for this</h1>
                             </div>
                             :
-                            <img className="border-2 border-black dark:border-white md:w-fit md:h-fit object-center m-2" src={`data:image/jpg;base64,${props.image}`} alt="dev meme" />
+                            <img className="border-2 border-black dark:border-white md:w-fit md:h-fit xl:h-full md:object-contain m-2" src={`data:image/jpg;base64,${props.image}`} alt="dev meme" />
                     }
-                    <SimpleButton className="visible static lg:absolute lg:invisible"
-                    icon={<ChevronLeftIcon className='mr-4 h-16 w-16 lg:w-28 lg:h-28 text-right' />} />
+                    <div className="visible static lg:absolute lg:invisible">
+                        <SimpleButton link="calender" icon={<ChevronLeftIcon className='mr-4 h-16 w-16 lg:w-28 lg:h-28 text-right text-white' />} />
+                    </div>
                 </center>
-                
             </div>
         </main>
     )

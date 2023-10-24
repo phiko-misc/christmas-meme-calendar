@@ -13,7 +13,7 @@ export default function calender() {
                 {
                     days.map(day => {
                         // If the day is after 24 december fx. if it is the 26 december set the day to 24 else set the day to current day in the loop.
-                        const days = dayjs().month(9).date(toDay.month() === 9 && toDay.date() > 24 ? 24 : day).hour(0).minute(0).second(0).millisecond(0).isSameOrBefore(dayjs(toDay));
+                        const days = dayjs().month(11).date(toDay.month() === 11 && toDay.date() > 24 ? 24 : day).hour(0).minute(0).second(0).millisecond(0).isSameOrBefore(dayjs(toDay));
                         const style = "text-red-600 text-center w-14 h-14 lg:w-[7vw] lg:h-[7vw] flex flex-col justify-center border-black dark:border-white border-l border-r border-y border-l-dashed bg-white bg-opacity-40 text-xl"
                         if (days) {
                             return (
