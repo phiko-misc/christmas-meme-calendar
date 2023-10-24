@@ -25,7 +25,7 @@ export const config = {
  * @returns {boolean}
  */
 async function handleDayCheck(day: number): Promise<boolean> {
-  if (dayjs().month(9).date() >= day && dayjs().month() === 9) {
+  if (dayjs().month(11).date() >= day && dayjs().month() === 11) {
     return true;
   }
   return false;
