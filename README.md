@@ -2,7 +2,7 @@
 
 Ho, Ho, Ho! Welcome to the Christmas Meme Calendar, a delightful Next.js project that spreads joy and laughter during the holiday season, now with the added magic of Dark Mode. This project delivers daily memes to programmers and developers, making each day of December leading up to Christmas a bit more cheerful and amusing. Get ready to unwrap a new meme every day, with extra treats on the weekends, all while embracing the holiday spirit!
 
-![Christmas Meme Calendar](https://cdn.discordapp.com/attachments/364032306199003156/1166356525623803967/Instagram_post_-_2.png)
+![Christmas Meme Calendar](https://cdn.discordapp.com/attachments/364032306199003156/1166358064836919347/Frame_60.png)
 
 ## 🚀 Features
 
