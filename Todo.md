@@ -8,6 +8,7 @@
 - [ ] Add security file
 - [ ] Set frontend and backend time to the same
 - [ ] Add image test for see if any of the images are the same
+- [ ] Add badge for the testing to readme
 
 - [ ] Add wiki
 - [ ] Document the image directory
