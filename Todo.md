@@ -1,3 +1,15 @@
-- [ ] Make the theme switch more beatify
-- [ ] Add day check before requesting a picture.
-- [ ] check if there is a limit on backend
+- [ ] Make the theme switch more beatify. So maybe abstract and set the position so it do not manipulate with other elements
+- [ ] Add day check before requesting a picture on frontend
+- [ ] Check if there is a limit on backend
+- [ ] Refactoring the image directory. To make it more simple
+- [ ] Make it ready to defend memes categorys. Set stated in url
+- [ ] Add unit test
+- [ ] Add Dom test
+- [ ] Add security file
+- [ ] Set frontend and backend time to the same
+- Add image test for see if any of the images are the same
+
+- [ ] Add wiki
+- [ ] Document the image directory
+- [ ] Document how to debug the calendar
+- [ ] Document how to set the date
