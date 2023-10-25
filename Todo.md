@@ -3,11 +3,10 @@
 - [ ] Check if there is a limit on backend
 - [ ] Refactoring the image directory. To make it more simple
 - [ ] Make it ready to defend memes categorys. Set stated in url
-- [ ] Add unit test
-- [ ] Add Dom test
+- [ ] Add [test](https://nextjs.org/docs/pages/building-your-application/optimizing/testing)
 - [ ] Add security file
 - [ ] Set frontend and backend time to the same
-- [ ] Add image test for see if any of the images are the same
+- [ ] Add image test for see if any of the images are the [same](https://stackoverflow.com/questions/71336204/github-action-check-if-a-file-already-exists)
 - [ ] Add badge for the testing to readme
 
 - [ ] Add wiki
