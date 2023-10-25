@@ -1,0 +1,3 @@
+- [ ] Make the theme switch more beatify
+- [ ] Add day check before requesting a picture.
+- [ ] check if there is a limit on backend
