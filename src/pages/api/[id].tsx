@@ -24,7 +24,7 @@ export const config = {
  * @returns {boolean}
  */
 async function handleDayCheck(day: number): Promise<boolean> {
-  if (dayjs().month(11).date() >= day && dayjs().month() === 11) {
+  if (dayjs().month(10).date() >= day && dayjs().month() === 10) {
     return true;
   }
   return false;
@@ -57,35 +57,34 @@ async function weekOfTheMonth(day: string): Promise<string> {
  * @param {NextApiResponse} res
  * @returns {*}
  */
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query;
+  const baseFileRoute = "./src/images/dev/";
+
   if (!id) {
     return res.status(500).json({ error: "Day not set" });
   }
+
   if (+id > 24) {
     return res.status(500).json({ error: "Number is over 24" });
   }
+
   if (req.method === "GET" && (await handleDayCheck(+id))) {
-    const random1 = getRandomInt(
-      1,
-      (await dayOfTheWeekCheck(+id)) === "day" ? 4 : 8,
-    );
-    if (random1 > 4) {
+    const weekCheck = getRandomInt(1, (await dayOfTheWeekCheck(+id)) === "day" ? 4 : 8);
+
+    if (weekCheck > 4) {
       const weekOfTheMonth1 = await weekOfTheMonth(
         dayjs().month(11).date(+id).format("YYYY-MM-DD"),
       );
       const random = getRandomInt(1, 2);
-      const imgPath = `./src/images/weekends/${weekOfTheMonth1}/${random}/dev/${
-        random1 - 4
-      }.jpg`;
+      const imgPath = `${baseFileRoute}weekends/${weekOfTheMonth1}/${random}/${weekCheck - 4
+        }.jpg`;
       const imageBuffer = readFileSync(imgPath);
       const base64Image = Buffer.from(imageBuffer).toString("base64");
       return res.status(200).json({ image: base64Image });
     }
-    const imgPath = `./src/images/${+id}/dev/${random1}.jpg`;
+
+    const imgPath = `${baseFileRoute}${+id}/${weekCheck}.jpg`;
     const imageBuffer = readFileSync(imgPath);
     const base64Image = Buffer.from(imageBuffer).toString("base64");
     return res.status(200).json({ image: base64Image });
