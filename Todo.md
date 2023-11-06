@@ -10,5 +10,4 @@
 
 - [ ] Add wiki
 - [ ] Document the image directory
-- [ ] Document how to debug the calendar
 - [ ] Document how to set the date
