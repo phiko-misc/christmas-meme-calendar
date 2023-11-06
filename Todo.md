@@ -4,7 +4,7 @@
 - [X] Refactoring the image directory. To make it more simple
 - [X] Make it ready to defend memes category. Set stated in url
 - [ ] Add [test](https://nextjs.org/docs/pages/building-your-application/optimizing/testing)
-- [ ] Set frontend and backend time to the same
+- [X] Set frontend and backend time to the same
 - [ ] Add image test for see if any of the images are the [same](https://stackoverflow.com/questions/71336204/github-action-check-if-a-file-already-exists)
 - [ ] Add badge for the testing to readme
 

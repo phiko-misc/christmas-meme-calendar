@@ -2,10 +2,16 @@ import { getRandomInt } from "@utils";
 import dayjs from "dayjs";
 import type { NextApiRequest, NextApiResponse } from "next";
 import duration from "dayjs/plugin/duration";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import { readFileSync } from "fs";
 import Category from "@/pages/category";
 
 dayjs.extend(duration);
+dayjs.extend(utc)
+dayjs.extend(timezone)
+
+dayjs.tz.setDefault("Europe/Copenhagen")
 
 /**
  * NextJs config
