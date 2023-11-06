@@ -1,5 +1,5 @@
 - [ ] Make the theme switch more beatify. So maybe abstract and set the position so it do not manipulate with other elements
-- [ ] Add day check before requesting a picture on frontend
+- [X] Add day check before requesting a picture on frontend
 - [X] Check if there is a limit on backend
 - [X] Refactoring the image directory. To make it more simple
 - [X] Make it ready to defend memes category. Set stated in url
