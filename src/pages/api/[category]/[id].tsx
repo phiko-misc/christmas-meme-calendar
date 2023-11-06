@@ -3,9 +3,13 @@ import dayjs from "dayjs";
 import type { NextApiRequest, NextApiResponse } from "next";
 import duration from "dayjs/plugin/duration";
 import { readFileSync } from "fs";
+import Category from "@/pages/category";
 
 dayjs.extend(duration);
 
+/**
+ * NextJs config
+ */
 export const config = {
   api: {
     bodyParser: {
@@ -18,13 +22,18 @@ export const config = {
 };
 
 /**
+ * Used for debug
+ * If the current month is not december
+ */
+const month = 11;
+
+/**
  * Check if it december and if the day is today or before
- *
  * @param {number} day
  * @returns {boolean}
  */
 async function handleDayCheck(day: number): Promise<boolean> {
-  if (dayjs().month(10).date() >= day && dayjs().month() === 10) {
+  if (dayjs().month(month).date() >= day && dayjs().month() === month) {
     return true;
   }
   return false;
@@ -32,7 +41,6 @@ async function handleDayCheck(day: number): Promise<boolean> {
 
 /**
  * Checks if the day is a weekend or not
- *
  * @param {number} day
  * @returns {("weekend" | "day")}
  */
@@ -52,14 +60,18 @@ async function weekOfTheMonth(day: string): Promise<string> {
 
 /**
  * Handle the api call
- *
  * @param {NextApiRequest} req
  * @param {NextApiResponse} res
  * @returns {*}
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { id } = req.query;
-  const baseFileRoute = "./src/images/dev/";
+  const { id, category } = req.query;
+  const baseFileRoute = `./src/images/${category}/`;
+
+  const allowCategory = Object.keys(Category);
+  if (!allowCategory.includes(category!.toString())) {
+    return res.status(404).json({ error: "Category does not exits" });
+  }
 
   if (!id) {
     return res.status(500).json({ error: "Day not set" });
