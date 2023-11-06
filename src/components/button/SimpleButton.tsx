@@ -1,4 +1,3 @@
-import ChevronRightIcon from "@components/Icons/ChevronRightIcon";
 import clsx from "clsx";
 import Link from "next/link";
 import { ReactNode } from "react";
