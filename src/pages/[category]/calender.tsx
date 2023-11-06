@@ -3,8 +3,11 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { Category } from "@/core/allowCategory";
+import getConfig from "next/config";
 
 const inter = Inter({ subsets: ["latin"] });
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
+
 
 export default function calender(props: { category: string }) {
   const toDay = dayjs();
@@ -20,7 +23,7 @@ export default function calender(props: { category: string }) {
       <div className="mb-20 grid h-full w-full grid-cols-4 place-items-center lg:grid-cols-6">
         {days.map((day) => {
           // If the day is after 24 december fx. if it is the 26 december set the day to 24 else set the day to current day in the loop.
-          const month = 11;
+          const month = serverRuntimeConfig.MONTH || publicRuntimeConfig.MONTH;
           const days = dayjs()
             .month(month)
             .date(toDay.month() === month && toDay.date() > 24 ? 24 : day)

@@ -5,13 +5,17 @@ import duration from "dayjs/plugin/duration";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import { readFileSync } from "fs";
-import Category from "@/pages/category";
+import getConfig from "next/config";
+import { Category } from "@/core/allowCategory";
 
 dayjs.extend(duration);
 dayjs.extend(utc)
 dayjs.extend(timezone)
 
 dayjs.tz.setDefault("Europe/Copenhagen")
+
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
+
 
 /**
  * NextJs config
@@ -31,7 +35,7 @@ export const config = {
  * Used for debug
  * If the current month is not december
  */
-const month = 11;
+const month = serverRuntimeConfig.MONTH || publicRuntimeConfig.MONTH;
 
 /**
  * Check if it december and if the day is today or before
@@ -40,6 +44,7 @@ const month = 11;
  */
 async function handleDayCheck(day: number): Promise<boolean> {
   if (dayjs().month(month).date() >= day && dayjs().month() === month) {
+
     return true;
   }
   return false;
@@ -76,7 +81,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const allowCategory = Object.keys(Category);
   if (!allowCategory.includes(category!.toString())) {
-    return res.status(404).json({ error: "Category does not exits" });
+    return res.status(500).json({ error: "Category does not exits" });
   }
 
   if (!id) {

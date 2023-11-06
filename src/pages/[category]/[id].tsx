@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import getConfig from "next/config";
 import SimpleButton from "@components/Button/SimpleButton";
 import { Category } from "@/core/allowCategory";
+import dayjs from "dayjs";
 
 const inter = Inter({ subsets: ["latin"] });
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
@@ -59,6 +60,7 @@ export const getServerSideProps = (async (context) => {
   const data = { props: { image: "" as string, category: "" as string, error: false as boolean } };
 
   const category = context.params!.category!.toString();
+  const id = context.params!.id!;
   const allowCategory = Object.keys(Category);
   if (!allowCategory.includes(category)) {
     return {
@@ -71,11 +73,27 @@ export const getServerSideProps = (async (context) => {
 
   data.props.category = category;
 
+  const toDay = dayjs();
+  const month = serverRuntimeConfig.MONTH || publicRuntimeConfig.MONTH;
+  const days = dayjs()
+    .month(month)
+    .date(toDay.month() === month && toDay.date() > 24 ? 24 : +id)
+    .hour(0)
+    .minute(0)
+    .second(0)
+    .millisecond(0)
+    .isSameOrBefore(dayjs(toDay));
+
+  if (!days) {
+    data.props.error = true;
+    return data;
+  }
+
   const response = await fetch(
     `${publicRuntimeConfig.URL ||
     serverRuntimeConfig.URL ||
     "http://localhost:3000/"
-    }${context.params!.category}/${context.params!.id}`,
+    }${category}/${id}`,
     {
       method: "GET",
     },
