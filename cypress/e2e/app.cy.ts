@@ -41,7 +41,10 @@ describe('Navigation', () => {
       cy.get('[data-cy-calenderbutton="1"]').click()
       cy.get("img")
       cy.get('.visible > [data-cy-simplebutton="true"]').click()
-      cy.get('[data-cy-calenderbutton="24"]').click()
+    })
+
+    it('Test not allow', () => {
+      cy.visit('http://localhost:3000/dev/24')
       cy.get('[data-cy-notnow="true"]').should('have.text', 'You are notready for this')
     })
   })
