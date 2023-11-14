@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:open": "cypress open",
+    "test:e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
+    "test:e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
+    "test:component": "cypress open --component",
+    "test:component:headless": "cypress run --component"
   },
   "dependencies": {
     "clsx": "^2.0.0",
@@ -16,6 +21,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-snowfall": "^1.2.1",
+    "start-server-and-test": "^2.0.2",
     "tailwindcss-border-styles": "^1.0.1"
   },
   "devDependencies": {
@@ -23,6 +29,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "cypress": "^13.5.0",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^9.0.0",

@@ -1,6 +1,6 @@
 import { Category } from "@/core/allowCategory";
 import CategoryCard from "@components/Card/CategoryCard";
-import ChevronLeftIcon from "@components/Icons/ChevronRightIcon copy";
+import ChevronLeftIcon from "@components/Icons/ChevronLeftIcon";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 
@@ -9,8 +9,8 @@ const allowCategory = Object.values(Category);
 
 export default function CategoryChooser() {
     return (
-        <main className={`flex h-full min-h-screen flex-col items-center ${inter.className}`} >
-            <div className="mb-20 grid h-full w-full grid-cols-4 place-items-center lg:grid-cols-6">
+        <main className={`flex h-full min-h-screen flex-col items-center ${inter.className}`}>
+            <div className="mb-20 grid h-full w-full grid-cols-4 place-items-center lg:grid-cols-6" data-cy-categorychooser>
                 {allowCategory.map((name) => {
                     if (typeof (name) === typeof ("")) {
                         name = name.toString();

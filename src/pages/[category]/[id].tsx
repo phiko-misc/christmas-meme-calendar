@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import ChevronLeftIcon from "@components/Icons/ChevronRightIcon copy";
+import ChevronLeftIcon from "@components/Icons/ChevronLeftIcon";
 import { GetStaticProps } from "next";
 import { Inter } from "next/font/google";
 import getConfig from "next/config";
@@ -31,7 +31,7 @@ export default function memePage(props: Props) {
         />
         <center className="flex h-full flex-col justify-center p-3">
           {props.error ? (
-            <div className="text-7xl text-black dark:text-white">
+            <div className="text-7xl text-black dark:text-white" data-cy-notnow>
               <h1>You are not</h1>
               <h1>ready for this</h1>
             </div>

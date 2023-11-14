@@ -28,6 +28,7 @@ export default function ThemeSwitch() {
     <button
       onClick={switchTheme}
       className="ml-3 mt-3 h-fit w-fit text-black dark:text-white"
+      data-cy-switchtheme
     >
       {theme === "light" ? (
         <SunIcon className="h-5 w-5" />

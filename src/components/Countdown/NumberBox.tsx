@@ -15,7 +15,7 @@ interface Props {
  */
 export default function NumberBox(props: Props) {
   return (
-    <div className="mt-4 flex flex-col items-center px-2">
+    <div className="mt-4 flex flex-col items-center px-2" data-cy-numberbox={props.unit}>
       <div className=" relative mt-4 flex h-32 w-32 flex-col items-center justify-center rounded-lg bg-transparent text-2xl md:text-4xl ">
         <div className="h-full w-full rounded-b-lg rounded-t-lg bg-[#343650]" />
 

@@ -19,7 +19,7 @@ export default function calender(props: { category: string }) {
   return (
     <main
       className={`flex h-full min-h-screen flex-col items-center ${inter.className}`}
-    >
+    data-cy-calender>
       <div className="mb-20 grid h-full w-full grid-cols-4 place-items-center lg:grid-cols-6">
         {days.map((day) => {
           // If the day is after 24 december fx. if it is the 26 december set the day to 24 else set the day to current day in the loop.
@@ -40,6 +40,7 @@ export default function calender(props: { category: string }) {
                 href={`/${props.category}/${day}`}
                 key={day}
                 className={`cursor-pointer hover:bg-gray-100 dark:hover:bg-opacity-60 ${style}`}
+                data-cy-calenderbutton={day}
               >
                 <p>{day}</p>
               </Link>

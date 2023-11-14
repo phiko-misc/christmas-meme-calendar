@@ -17,6 +17,7 @@ export default function SimpleButton(props: Props) {
         "h-32 w-32 rounded-full bg-gradient-to-r from-rose-700 to-rose-900 shadow-lg disabled:brightness-75 lg:h-44 lg:w-44",
         props.className && props.className,
       )}
+      data-cy-simplebutton
     >
       {props.disabled ? (
         <div className="flex w-full place-content-center">{props.icon}</div>
