@@ -20,8 +20,7 @@
     "next-themes": "^0.2.1",
     "react": "latest",
     "react-dom": "latest",
-    "react-snowfall": "^1.2.1",
-    "tailwindcss-border-styles": "^1.0.1"
+    "react-snowfall": "^1.2.1"
   },
   "devDependencies": {
     "@types/node": "latest",
@@ -39,5 +38,8 @@
     "start-server-and-test": "^2.0.3",
     "tailwindcss": "latest",
     "typescript": "latest"
+  },
+  "bin": {
+    "create-image-folder": "bin/index.js"
   }
 }
