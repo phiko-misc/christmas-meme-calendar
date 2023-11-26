@@ -1,4 +1,4 @@
-import ThemeSwitch from "@components/button/ThemeButton";
+import ThemeSwitch from "@components/Button/ThemeButton";
 import Snow from "../snow";
 
 interface Props {
