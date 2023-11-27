@@ -32,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:description" content="Make the christmas time more fun with the best memes in the best time" />
         <meta property="og:image" content="https://raw.githubusercontent.com/phiko-misc/christmas-meme-calendar/main/.github/assets/Instagram%20post%20-%202.png" />
         <meta property="og:url" content="https://christmas-meme-calendar.vercel.app/" />
+        <meta property="og:type" content="website" />
 
         <meta name="twitter:title" content="Best Meme Christmas Calendar" />
         <meta name="twitter:description" content="Make the christmas time more fun with the best memes in the best time" />
