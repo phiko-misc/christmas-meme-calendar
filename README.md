@@ -70,6 +70,6 @@ If you have any questions, suggestions, or just want to say hi, feel free to rea
 
 Share the Christmas Meme Calendar with your fellow programmers and developers and brighten up their holiday season! 🎉
 
-[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)](https://twitter.com/intent/tweet?text=Check%20out%20the%20Christmas%20Meme%20Calendar%20%F0%9F%8E%84%20-%20A%20Next.js%20project%20that%20delivers%20daily%20memes%20for%20programmers%20and%20developers%20during%20the%20holiday%20season!%20%F0%9F%8E%85%20https%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)](https://twitter.com/intent/tweet?text=Check%20out%20the%20Christmas%20Meme%20Calendar%20%F0%9F%8E%84%0A-%20A%20Next.js%20project%20that%20delivers%20daily%20memes%20for%20programmers%20and%20developers%20during%20the%20holiday%20season!%20%F0%9F%8E%85%0Ahttps%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)
 
 Enjoy the laughter and Merry Christmas! 🎄🎁🌙
