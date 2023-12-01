@@ -36,7 +36,6 @@ export const config = {
  * If the current month is not december
  */
 const month = serverRuntimeConfig.MONTH || publicRuntimeConfig.MONTH;
-console.log(serverRuntimeConfig.MONTH || publicRuntimeConfig.MONTH)
 
 /**
  * Check if it december and if the day is today or before
@@ -44,7 +43,6 @@ console.log(serverRuntimeConfig.MONTH || publicRuntimeConfig.MONTH)
  * @returns {boolean}
  */
 async function handleDayCheck(day: number): Promise<boolean> {
-  console.log(dayjs().month(month).date())
   if (dayjs().month(month).date() >= day && dayjs().month() === month) {
 
     return true;
@@ -94,7 +92,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ error: "Number is over 24" });
   }
 
-  console.log(req)
   if (req.method === "GET" && (await handleDayCheck(+id))) {
     const weekCheck = getRandomInt(1, (await dayOfTheWeekCheck(+id)) === "day" ? 4 : 8);
 
