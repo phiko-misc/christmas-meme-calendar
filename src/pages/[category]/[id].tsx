@@ -7,8 +7,11 @@ import SimpleButton from "@components/Button/SimpleButton";
 import { Category } from "@/core/allowCategory";
 import dayjs from "dayjs";
 import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
+import timezone from "dayjs/plugin/timezone";
+
 dayjs.extend(isSameOrBefore);
-dayjs.tz.setDefault("Europe/Copenhagen")
+dayjs.extend(timezone);
+dayjs.tz.setDefault("Europe/Copenhagen");
 
 const inter = Inter({ subsets: ["latin"] });
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
