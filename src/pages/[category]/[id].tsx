@@ -8,6 +8,7 @@ import { Category } from "@/core/allowCategory";
 import dayjs from "dayjs";
 import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
 dayjs.extend(isSameOrBefore);
+dayjs.tz.setDefault("Europe/Copenhagen")
 
 const inter = Inter({ subsets: ["latin"] });
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
