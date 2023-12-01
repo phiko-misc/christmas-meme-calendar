@@ -6,6 +6,8 @@ import getConfig from "next/config";
 import SimpleButton from "@components/Button/SimpleButton";
 import { Category } from "@/core/allowCategory";
 import dayjs from "dayjs";
+import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
+dayjs.extend(isSameOrBefore);
 
 const inter = Inter({ subsets: ["latin"] });
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
