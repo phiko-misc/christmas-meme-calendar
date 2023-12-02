@@ -77,7 +77,7 @@ async function weekOfTheMonth(day: string): Promise<string> {
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id, category } = req.query;
-  const baseFileRoute = `./src/images/${category}/`;
+  const baseFileRoute = `../images/${category}/`;
 
   const allowCategory = Object.keys(Category);
   if (!allowCategory.includes(category!.toString())) {
