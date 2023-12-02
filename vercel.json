@@ -1,0 +1,7 @@
+{
+    "functions": {
+        "api/[category]/[id].js": {
+            "includeFiles": "src/images/**"
+        }
+    }
+}
