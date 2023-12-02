@@ -1,6 +1,6 @@
 {
     "functions": {
-        "api/[category]/[id].js": {
+        "api/[category]/[id].tsx": {
             "includeFiles": "src/images/**"
         }
     }
