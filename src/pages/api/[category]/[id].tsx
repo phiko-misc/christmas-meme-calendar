@@ -5,6 +5,7 @@ import duration from "dayjs/plugin/duration";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import { readFileSync } from "fs";
+import path from 'path';
 import getConfig from "next/config";
 import { Category } from "@/core/allowCategory";
 
@@ -78,7 +79,7 @@ async function weekOfTheMonth(day: string): Promise<string> {
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id, category } = req.query;
-  const baseFileRoute = `public/images/${category}/`;
+  const baseFileRoute = path.join(process.cwd(), 'images', `${category}`);
 
   const allowCategory = Object.keys(Category);
   if (!allowCategory.includes(category!.toString())) {
