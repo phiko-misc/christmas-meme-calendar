@@ -3,11 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   output: "standalone",
   serverRuntimeConfig: {
-    URL: process.env.SERVER_API_URL ?? "http://localhost:3000/api/",
+    URL: process.env.VERCEL_URL ?? process.env.SERVER_API_URL ?? "http://localhost:3000/api/",
     MONTH: process.env.MONTH ?? 11,
   },
   publicRuntimeConfig: {
-    URL: process.env.CLIENT_API_URL ?? "http://localhost:3000/api/",
+    URL: process.env.VERCEL_URL ?? process.env.CLIENT_API_URL ?? "http://localhost:3000/api/",
     MONTH: process.env.MONTH ?? 11,
   },
   experimental: {
