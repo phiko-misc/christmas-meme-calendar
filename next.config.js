@@ -11,7 +11,10 @@ const nextConfig = {
     MONTH: process.env.MONTH ?? 11,
   },
   experimental: {
-    largePageDataBytes: 716800
+    largePageDataBytes: 716800,
+    outputFileTracingIncludes: {
+      '/api/[category]/[id]': ['./images/**/*'],
+    },
   }
 }
 
