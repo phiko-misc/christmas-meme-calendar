@@ -44,8 +44,8 @@ const month = serverRuntimeConfig.MONTH || publicRuntimeConfig.MONTH;
  * @param {number} day
  * @returns {boolean}
  */
-async function handleDayCheck(day: number): Promise<boolean> {
-  if (dayjs().month(month).date() >= day && dayjs().month() === month) {
+function handleDayCheck(day: number): boolean {
+  if (dayjs().month(month).date() >= day && dayjs().month() === +month) {
 
     return true;
   }
@@ -79,7 +79,7 @@ async function weekOfTheMonth(day: string): Promise<string> {
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id, category } = req.query;
-  const baseFileRoute = path.join(process.cwd(), 'images', `${category}`);
+  const baseFileRoute = path.join(process.cwd(), 'images', `${category}/`);
 
   const allowCategory = Object.keys(Category);
   if (!allowCategory.includes(category!.toString())) {
@@ -94,7 +94,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ error: "Number is over 24" });
   }
 
-  if (req.method === "GET" && (await handleDayCheck(+id))) {
+  if (req.method === "GET" &&  handleDayCheck(+id)) {
+
     const weekCheck = getRandomInt(1, (await dayOfTheWeekCheck(+id)) === "day" ? 4 : 8);
 
     if (weekCheck > 4) {

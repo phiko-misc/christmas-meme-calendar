@@ -98,12 +98,14 @@ export const getServerSideProps = (async (context) => {
   const response = await fetch(
     `${publicRuntimeConfig.URL ||
     serverRuntimeConfig.URL ||
-    "http://localhost:3000/"
+    "http://localhost:3000/api/"
     }${category}/${id}`,
     {
       method: "GET",
     },
   );
+
+  console.log(JSON.stringify(await response.url))
 
   if (response.ok) {
     const json = await response.json();
