@@ -105,7 +105,6 @@ export const getServerSideProps = (async (context) => {
     },
   );
 
-  console.log(JSON.stringify(response));
   if (response.ok) {
     const json = await response.json();
 

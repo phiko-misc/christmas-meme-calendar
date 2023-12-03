@@ -26,6 +26,7 @@ export const config = {
       sizeLimit: "10kb",
     },
     responseLimit: 716800,
+    externalResolver: true,
   },
   // Specifies the maximum allowed duration for this function to execute (in seconds)
   maxDuration: 5,
@@ -77,7 +78,7 @@ async function weekOfTheMonth(day: string): Promise<string> {
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id, category } = req.query;
-  const baseFileRoute = `../images/${category}/`;
+  const baseFileRoute = `public/images/${category}/`;
 
   const allowCategory = Object.keys(Category);
   if (!allowCategory.includes(category!.toString())) {
