@@ -11,7 +11,11 @@ const nextConfig = {
     MONTH: process.env.MONTH ?? 11,
   },
   experimental: {
-    largePageDataBytes: 716800
+    largePageDataBytes: 716800,
+    // this includes files from the monorepo base two directories up
+    outputFileTracingIncludes: {
+      '/api/[category]/[id]': ['src/images/**/*'],
+    },
   }
 }
 

@@ -3,5 +3,6 @@
         "pages/api/[category]/[id].tsx": {
             "includeFiles": "src/images/**"
         }
-    }
+    },
+    "framework": "nextjs"
 }
