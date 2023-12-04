@@ -5,6 +5,7 @@ import duration from "dayjs/plugin/duration";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import { readFileSync } from "fs";
+import path from 'path';
 import getConfig from "next/config";
 import { Category } from "@/core/allowCategory";
 
@@ -26,6 +27,7 @@ export const config = {
       sizeLimit: "10kb",
     },
     responseLimit: 716800,
+    externalResolver: true,
   },
   // Specifies the maximum allowed duration for this function to execute (in seconds)
   maxDuration: 5,
@@ -42,8 +44,8 @@ const month = serverRuntimeConfig.MONTH || publicRuntimeConfig.MONTH;
  * @param {number} day
  * @returns {boolean}
  */
-async function handleDayCheck(day: number): Promise<boolean> {
-  if (dayjs().month(month).date() >= day && dayjs().month() === month) {
+function handleDayCheck(day: number): boolean {
+  if (dayjs().month(month).date() >= day && dayjs().month() === +month) {
 
     return true;
   }
@@ -77,7 +79,7 @@ async function weekOfTheMonth(day: string): Promise<string> {
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id, category } = req.query;
-  const baseFileRoute = `./src/images/${category}/`;
+  const baseFileRoute = path.join(process.cwd(), 'images', `${category}/`);
 
   const allowCategory = Object.keys(Category);
   if (!allowCategory.includes(category!.toString())) {
@@ -92,7 +94,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ error: "Number is over 24" });
   }
 
-  if (req.method === "GET" && (await handleDayCheck(+id))) {
+  if (req.method === "GET" &&  handleDayCheck(+id)) {
     const weekCheck = getRandomInt(1, (await dayOfTheWeekCheck(+id)) === "day" ? 4 : 8);
 
     if (weekCheck > 4) {

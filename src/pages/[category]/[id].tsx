@@ -6,6 +6,12 @@ import getConfig from "next/config";
 import SimpleButton from "@components/Button/SimpleButton";
 import { Category } from "@/core/allowCategory";
 import dayjs from "dayjs";
+import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
+import timezone from "dayjs/plugin/timezone";
+
+dayjs.extend(isSameOrBefore);
+dayjs.extend(timezone);
+dayjs.tz.setDefault("Europe/Copenhagen");
 
 const inter = Inter({ subsets: ["latin"] });
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
@@ -92,7 +98,7 @@ export const getServerSideProps = (async (context) => {
   const response = await fetch(
     `${publicRuntimeConfig.URL ||
     serverRuntimeConfig.URL ||
-    "http://localhost:3000/"
+    "http://localhost:3000/api/"
     }${category}/${id}`,
     {
       method: "GET",

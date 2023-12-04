@@ -19,7 +19,7 @@ interface time {
  */
 export default function Countdown(): JSX.Element {
   const toDay = dayjs();
-  const christmasDate = dayjs(`${dayjs().get("year")}-12-24`);
+  const christmasDate = dayjs(`${dayjs().get("year")}-12-25`);
   const [timeBeforeChristmas, setTimeBeforeChristmas] = useState<time>();
 
   useEffect(() => {
