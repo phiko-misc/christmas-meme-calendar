@@ -6,7 +6,8 @@ Only the latest version of the project is currently supported with security upda
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.0   | :white_check_mark: |
+| 1.1.0   | :white_check_mark: |
+| 1.0.0   | :no_entry: |
 
 ## Reporting a Vulnerability
 

@@ -96,6 +96,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ error: "Number is over 24" });
   }
 
+  if (Number.isNaN(+id)) {
+    return res.status(404).json({ error: "Not found" });
+  }
+
   if (req.method === "GET" &&  handleDayCheck(+id)) {
     const weekCheck = getRandomInt(1, (await dayOfTheWeekCheck(+id)) === "day" ? 4 : 8);
 
