@@ -95,8 +95,6 @@ export const getServerSideProps = (async (context) => {
     return data;
   }
 
-  console.log(publicRuntimeConfig.URL)
-  console.log(serverRuntimeConfig.URL)
   const response = await fetch(
     `${publicRuntimeConfig.URL ||
     serverRuntimeConfig.URL ||
@@ -106,9 +104,6 @@ export const getServerSideProps = (async (context) => {
       method: "GET",
     },
   );
-
-  console.log(JSON.stringify(await response.url))
-
   if (response.ok) {
     const json = await response.json();
 

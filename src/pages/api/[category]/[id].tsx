@@ -95,7 +95,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   if (req.method === "GET" &&  handleDayCheck(+id)) {
-
     const weekCheck = getRandomInt(1, (await dayOfTheWeekCheck(+id)) === "day" ? 4 : 8);
 
     if (weekCheck > 4) {

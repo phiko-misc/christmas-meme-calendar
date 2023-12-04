@@ -2,7 +2,7 @@
 
 Ho, Ho, Ho! Welcome to the Christmas Meme Calendar, a delightful Next.js project that spreads joy and laughter during the holiday season, now with the added magic of Dark Mode. This project delivers daily memes to programmers and developers, making each day of December leading up to Christmas a bit more cheerful and amusing. Get ready to unwrap a new meme every day, with extra treats on the weekends, all while embracing the holiday spirit!
 
-![Christmas Meme Calendar](https://cdn.discordapp.com/attachments/364032306199003156/1166358064836919347/Frame_60.png)
+![Christmas Meme Calendar](./.github/assets/Frame_60.png)
 
 ## 🚀 Features
 
@@ -24,6 +24,7 @@ Ho, Ho, Ho! Welcome to the Christmas Meme Calendar, a delightful Next.js project
 - **Responsive Design**: Ensuring an excellent user experience across all devices.
 - **Dark Mode Toggle**: Enhancing the user experience with Dark Mode support.
 - **Git**: Version control for collaboration and code management.
+- **E2E Testing**: Ensuring an perfect user experience across all browsers.
 
 ## 🏃‍♂️ Quick Start
 
@@ -69,6 +70,6 @@ If you have any questions, suggestions, or just want to say hi, feel free to rea
 
 Share the Christmas Meme Calendar with your fellow programmers and developers and brighten up their holiday season! 🎉
 
-[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)](https://twitter.com/intent/tweet?text=Check%20out%20the%20Christmas%20Meme%20Calendar%20%F0%9F%8E%84%20-%20A%20Next.js%20project%20that%20delivers%20daily%20memes%20for%20programmers%20and%20developers%20during%20the%20holiday%20season!%20%F0%9F%8E%85%20https%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)](https://twitter.com/intent/tweet?text=Check%20out%20the%20Christmas%20Meme%20Calendar%20%F0%9F%8E%84%0A-%20A%20Next.js%20project%20that%20delivers%20daily%20memes%20for%20programmers%20and%20developers%20during%20the%20holiday%20season!%20%F0%9F%8E%85%0Ahttps%3A%2F%2Fgithub.com%2Fphiko-misc%2Fchristmas-meme-calendar)
 
 Enjoy the laughter and Merry Christmas! 🎄🎁🌙
