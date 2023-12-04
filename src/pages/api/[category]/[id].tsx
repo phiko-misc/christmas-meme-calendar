@@ -4,16 +4,18 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import duration from "dayjs/plugin/duration";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import weekOfYear from "dayjs/plugin/weekOfYear";
 import { readFileSync } from "fs";
 import path from 'path';
 import getConfig from "next/config";
 import { Category } from "@/core/allowCategory";
 
 dayjs.extend(duration);
-dayjs.extend(utc)
-dayjs.extend(timezone)
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.extend(weekOfYear);
 
-dayjs.tz.setDefault("Europe/Copenhagen")
+dayjs.tz.setDefault("Europe/Copenhagen");
 
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 

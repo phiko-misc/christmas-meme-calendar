@@ -13,7 +13,7 @@ const nextConfig = {
   experimental: {
     largePageDataBytes: 716800,
     outputFileTracingIncludes: {
-      '/api/[category]/[id]': ['./images/**/*'],
+      '/api/[category]/[id]': ['./images/**/*', './images/**/**/*'],
     },
   }
 }
