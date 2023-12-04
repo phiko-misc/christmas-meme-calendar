@@ -15,7 +15,7 @@ function main() {
     createDaysFoldersAndWeeks(argv.title);
 }
 function createRootDir(title) {
-    var dir = "src/images/".concat(title);
+    var dir = "images/".concat(title);
     try {
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir, { recursive: true });
@@ -48,7 +48,7 @@ function createCategory(title) {
     }
 }
 function createDaysFoldersAndWeeks(title) {
-    var rootDir = "src/images/".concat(title);
+    var rootDir = "images/".concat(title);
     try {
         var dir_1;
         var _loop_1 = function (index) {

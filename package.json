@@ -39,7 +39,6 @@
     "prettier-plugin-tailwindcss": "^0.5.6",
     "start-server-and-test": "^2.0.3",
     "tailwindcss": "latest",
-    "@types/yargs": "^17.0.32",
     "typescript": "latest"
   },
   "bin": {
