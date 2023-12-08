@@ -32,7 +32,7 @@ function main() {
  * @param {string} title
  */
 function createRootDir(title: string) {
-    const dir = `src/images/${title}`;
+    const dir = `images/${title}`;
     try {
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir, { recursive: true });
@@ -77,7 +77,7 @@ function createCategory(title: string) {
  * @param {string} title
  */
 function createDaysFoldersAndWeeks(title: string) {
-    const rootDir = `src/images/${title}`;
+    const rootDir = `images/${title}`;
     try {
         let dir;
 
