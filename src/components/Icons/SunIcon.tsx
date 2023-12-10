@@ -8,7 +8,7 @@ interface IconProps {
  * @link https://heroicons.com/
  * @returns sun icon
  */
-export function SunIcon(props: IconProps) {
+export default function SunIcon(props: IconProps) {
   return (
     <div className={props.className}>
       <svg

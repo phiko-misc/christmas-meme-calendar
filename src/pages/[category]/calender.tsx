@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import { Category } from "@/core/allowCategory";
+import Category from "@/core/allowCategory";
 import getConfig from "next/config";
 
 const inter = Inter({ subsets: ["latin"] });

@@ -16,26 +16,26 @@ const nextConfig = {
       '/api/[category]/[id]': ['./images/**/*', './images/**/**/*'],
     },
   },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.js$/,
-      use: {
-        loader: '@swc/loader',
-        options: {
-          jsc: {
-            parser: {
-              syntax: 'ecmascript',
-              jsx: true
-            },
-            transform: {
-              react: true
-            }
-          }
-        }
-      }
-    });
-    return config;
-  }
+  // webpack(config) {
+  //   config.module.rules.push({
+  //     test: /\.js$/,
+  //     use: {
+  //       loader: '@swc/loader',
+  //       options: {
+  //         jsc: {
+  //           parser: {
+  //             syntax: 'ecmascript',
+  //             jsx: true
+  //           },
+  //           transform: {
+  //             react: true
+  //           }
+  //         }
+  //       }
+  //     }
+  //   });
+  //   return config;
+  // }
 }
 
 module.exports = nextConfig

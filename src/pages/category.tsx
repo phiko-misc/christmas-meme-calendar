@@ -1,4 +1,4 @@
-import { Category } from "@/core/allowCategory";
+import Category from "@/core/allowCategory";
 import CategoryCard from "@components/Card/CategoryCard";
 import ChevronLeftIcon from "@components/Icons/ChevronLeftIcon";
 import { Inter } from "next/font/google";

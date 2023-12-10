@@ -1,3 +1,5 @@
-export enum Category {
+enum Category {
     "dev"
 }
+
+export default Category

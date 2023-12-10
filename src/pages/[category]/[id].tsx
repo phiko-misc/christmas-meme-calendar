@@ -4,7 +4,7 @@ import { GetStaticProps } from "next";
 import { Inter } from "next/font/google";
 import getConfig from "next/config";
 import SimpleButton from "@components/Button/SimpleButton";
-import { Category } from "@/core/allowCategory";
+import Category from "@/core/allowCategory";
 import dayjs from "dayjs";
 import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
 import timezone from "dayjs/plugin/timezone";
