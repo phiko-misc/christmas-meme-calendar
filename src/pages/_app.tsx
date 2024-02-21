@@ -14,10 +14,10 @@ export default function App({ Component, pageProps }: AppProps) {
   dayjs.extend(duration);
   dayjs.extend(isSameOrBefore);
   dayjs.extend(weekOfYear);
-  dayjs.extend(utc)
-  dayjs.extend(timezone)
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
 
-  dayjs.tz.setDefault("Europe/Copenhagen")
+  dayjs.tz.setDefault("Europe/Copenhagen");
 
   return (
     <main id="root-container" className="h-screen w-screen">

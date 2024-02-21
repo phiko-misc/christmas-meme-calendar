@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { SunIcon } from "@components/Icons/SunIcon";
-import { MoonIcon } from "@components/Icons/MoonIcon";
+import SunIcon from "@components/Icons/SunIcon";
+import MoonIcon from "@components/Icons/MoonIcon";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);

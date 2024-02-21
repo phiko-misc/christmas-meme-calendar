@@ -1,5 +1,6 @@
 import ThemeSwitch from "@components/Button/ThemeButton";
 import Snow from "../snow";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 interface Props {
   children: JSX.Element;
@@ -21,6 +22,7 @@ export default function Layout(props: Props) {
         </div>
         <Snow />
       </div>
+      <SpeedInsights />
     </>
   );
 }
