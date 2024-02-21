@@ -32,7 +32,7 @@ export default function NumberBox(props: Props) {
         <div className="absolute -right-1 top-[60px] h-[12px] w-[12px] rounded-full bg-[#1e1f29]" />
         <div className="absolute -left-1 top-[60px] h-[12px] w-[12px] rounded-full bg-[#1e1f29]" />
       </div>
-      <p className="mt-3 text-lg font-semibold text-black dark:text-rose-200 md:text-2xl ">
+      <p className="mt-3 text-lg font-semibold text-black dark:text-rose-200 md:text-2xl select-none">
         {props.unit}
       </p>
     </div>
