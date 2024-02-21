@@ -7,7 +7,7 @@ const nextConfig = {
   output: "standalone",
   serverRuntimeConfig: {
     URL: (process.env.VERCEL_URL && process.env.VERCEL_URL !== "" ? `http://${process.env.VERCEL_URL}/api/` : undefined) ?? process.env.SERVER_API_URL ?? "http://localhost:3000/api/",
-    MONTH: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test" ? currentMonth : process.env.MONTH ?? 11,
+    MONTH: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test" || process.env.CYPRESS_TEST === true ? currentMonth : process.env.MONTH ?? 11,
   },
   publicRuntimeConfig: {
     URL: (process.env.VERCEL_URL && process.env.VERCEL_URL !== "" ? `http://${process.env.VERCEL_URL}/api/` : undefined) ?? process.env.CLIENT_API_URL ?? "http://localhost:3000/api/",
