@@ -8,7 +8,7 @@ interface IconProps {
  * @link https://heroicons.com/
  * @returns moon icon
  */
-export function MoonIcon(props: IconProps) {
+export default function MoonIcon(props: IconProps) {
   return (
     <div className={props.className}>
       <svg

@@ -9,6 +9,9 @@ on:
   schedule:
     - cron: "36 18 * * 3"
 
+env:
+ NODE_ENV : test
+
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04

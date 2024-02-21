@@ -8,7 +8,7 @@ import weekOfYear from "dayjs/plugin/weekOfYear";
 import { readFileSync } from "fs";
 import path from 'path';
 import getConfig from "next/config";
-import { Category } from "@/core/allowCategory";
+import Category from "@/core/allowCategory";
 
 dayjs.extend(duration);
 dayjs.extend(utc);
