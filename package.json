@@ -14,7 +14,7 @@
     "test:component:headless": "cypress run --component"
   },
   "dependencies": {
-    "clsx": "^2.0.1",
+    "clsx": "^2.1.0",
     "@vercel/speed-insights": "^1.0.1",
     "dayjs": "^1.11.10",
     "next": "^14.1.0",
