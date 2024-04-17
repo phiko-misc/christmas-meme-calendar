@@ -1,36 +1,48 @@
 {
   "name": "christmas-meme-calender",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:open": "cypress open",
+    "test:e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
+    "test:e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
+    "test:component": "cypress open --component",
+    "test:component:headless": "cypress run --component"
   },
   "dependencies": {
-    "clsx": "^2.0.0",
+    "clsx": "^2.1.0",
+    "@vercel/speed-insights": "^1.0.10",
     "dayjs": "^1.11.10",
-    "next": "13.5.6",
+    "next": "^14.1.2",
     "next-themes": "^0.2.1",
-    "react": "latest",
-    "react-dom": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-snowfall": "^1.2.1",
-    "tailwindcss-border-styles": "^1.0.1"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "@types/react": "^18.2.41",
+    "@types/react-dom": "^18.2.17",
+    "@types/yargs": "^17.0.32",
     "autoprefixer": "latest",
+    "cypress": "^13.6.5",
     "eslint": "latest",
-    "eslint-config-next": "latest",
+    "eslint-config-next": "^14.1.0",
     "eslint-config-prettier": "^9.0.0",
     "postcss": "latest",
     "prettier": "3.0.3",
     "prettier-plugin-prisma": "^5.0.0",
     "prettier-plugin-tailwindcss": "^0.5.6",
+    "start-server-and-test": "^2.0.3",
     "tailwindcss": "latest",
     "typescript": "latest"
+  },
+  "bin": {
+    "create-image-folder": "bin/index.js"
   }
 }
