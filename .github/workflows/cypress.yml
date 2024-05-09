@@ -18,6 +18,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - run: npm i
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
@@ -27,6 +28,7 @@ jobs:
     name: E2E on Chrome
     steps:
       - uses: actions/checkout@v4
+      - run: npm i
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
@@ -39,6 +41,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - run: npm i
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
@@ -50,6 +53,7 @@ jobs:
     name: E2E on Edge
     steps:
       - uses: actions/checkout@v4
+      - run: npm i
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
