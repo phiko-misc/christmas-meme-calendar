@@ -1,0 +1,50 @@
+name: Update Dependencies on PR
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'  # Specify the Node.js version you need
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        if [ -n "$(git status --porcelain)" ]; then
+          git add package-lock.json
+          git commit -m "Update dependencies"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+        fi
+
+    - name: Notify PR author
+      if: success()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const prNumber = context.issue.number;
+          const { data: pullRequest } = await github.pulls.get({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: prNumber,
+          });
+          const message = "Dependencies have been updated automatically.";
+          await github.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: prNumber,
+            body: message,
+          });
