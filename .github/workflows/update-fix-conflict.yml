@@ -40,23 +40,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git push origin HEAD:${{ github.event.pull_request.head.ref }}
-
-    - name: Notify PR author
-      if: success()
-      uses: actions/github-script@v6
-      with:
-        script: |
-          const prNumber = context.payload.pull_request.number;
-          const { data: pullRequest } = await github.pulls.get({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            pull_number: prNumber,
-          });
-          const message = "Dependencies have been updated automatically.";
-          await github.issues.createComment({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: prNumber,
-            body: message,
-          });
+        git push origin HEAD:${{ github.event.pull_request.head.ref }
