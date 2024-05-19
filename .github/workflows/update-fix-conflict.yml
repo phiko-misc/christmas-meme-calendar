@@ -47,7 +47,7 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          const prNumber = context.issue.number;
+          const prNumber = context.payload.pull_request.number;
           const { data: pullRequest } = await github.pulls.get({
             owner: context.repo.owner,
             repo: context.repo.repo,
